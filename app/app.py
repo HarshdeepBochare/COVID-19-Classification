@@ -16,7 +16,7 @@ def hello_world():
     
     else:
         image_file = request.files['ximage']
-        image_path = "user_input_images/" + image_file.filename
+        image_path = "app/user_input_images/" + image_file.filename
         image_file.save(image_path)
         model_new = keras.models.load_model('covpredd.h5')
         pred = cov_or_not(model_new, image_path)
