@@ -2,7 +2,7 @@ from flask import Flask, request, render_template
 import numpy as np
 from joblib import load
 import keras
-import cv2
+# import cv2
 import tensorflow as tf
 app = Flask(__name__)
 
@@ -34,9 +34,9 @@ def hello_world():
 
 
 def cov_or_not(model, image_path):
-    # test_img1 = tf.keras.utils.load_img(image_path, target_size=(224,224))
-    test_img1 = cv2.imread(image_path)
-    test_img1 = cv2.resize(test_img1,(224,224))
+    test_img1 = tf.keras.utils.load_img(image_path, target_size=(224,224))
+    # test_img1 = cv2.imread(image_path)
+    # test_img1 = cv2.resize(test_img1,(224,224))
     test_img1 = np.array(test_img1)
     test_img1 = np.expand_dims(test_img1, axis = 0) 
     predicted_op = model.predict(test_img1)
