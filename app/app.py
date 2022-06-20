@@ -41,3 +41,6 @@ def cov_or_not(model, image_path):
     test_img1 = np.expand_dims(test_img1, axis = 0) 
     predicted_op = model.predict(test_img1)
     return predicted_op
+
+# if __name__ == '__main__':
+#     app.run(host='0.0.0.0', port=8080)
